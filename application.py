@@ -14,8 +14,9 @@ def home():
 def predict():
     # for rendering results on HTML GUI
     int_features = [float(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
+    forms = slice(1, 4)
+    final_features = [np.array(int_features[forms])]
     prediction = model.predict(final_features)
     output = round(prediction[0], 2)
-    return render_template('index.html', prediction_text='CO2    Emission of the vehicle is :{}'.format(output))
+    return render_template('index.html', prediction_text='Optimal Coagulant Dosage: {} mg/l'.format(output))
 

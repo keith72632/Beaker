@@ -3,28 +3,34 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Water Treatment Coagulation Model</title>
+  <title>Virtual Jar Testing</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
 
 <body>
  <div class="login">
-	<h1>Predict Coagulant Dosage</h1>
+	<h1>Virtual Jar Testing</h1>
      <h3> Fill out the following forms to calulate an optimal coagulant dosage</h3>
-
+    <select name="coagulants" id="coagulants">
+      <option value="Null">Choose a Coagulant</option>
+      <option value="PAC">Polyaluminum Chloride(PAC)</option>
+      <option value="ACH">Aluminum Chlorohydrate(ACH)</option>
+      <option value="Alum">Aluminum Sulfate(Alum)</option>
+    </select>
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
+		    <input type="text" name="airtemp" placeholder="Air Temperature" required="required"/>
     	  <input type="text" name="enginesize" placeholder="Water Temperature" required="required" />
         <input type="text" name="cylinders" placeholder="Raw Turbidity" required="required" />
 		    <input type="text" name="fuel" placeholder="Settled pH" required="required" />
+		    <input type="text" name="detentiontime" placeholder="Approximated Detention Time" required="required"/>
         <button type="submit" class="btn">Calculate</button>
     </form>
-
    <br>
    <br>
    {{ prediction_text }}
