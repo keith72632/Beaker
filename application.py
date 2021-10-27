@@ -1,12 +1,12 @@
 # import numpy as np
-from flask import Flask, render_template, request
+from flask import Flask#, render_template, request
 # import pickle
 
-app = Flask(__name__)
+application = Flask(__name__)
 # model = pickle.load(open('model.pkl', 'rb'))
 
 #default page of our web-app
-@app.route('/')
+@application.route('/')
 def home():
     # return render_template('index.html')
     return 'Hey'
