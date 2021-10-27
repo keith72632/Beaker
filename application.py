@@ -1,4 +1,4 @@
-import numpy as np
+# import numpy as np
 from flask import Flask, render_template, request
 # import pickle
 
@@ -11,13 +11,13 @@ def home():
     # return render_template('index.html')
     return 'Hey'
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    #for rendering results on HTML GUI
-    # int_features = [float(x) for x in request.form.values()]
-    # final_features = [np.array(int_features)]
-    # prediction = model.predict(final_features)
-    # output = round(prediction[0], 2)
-    # return render_template('index.html', prediction_text='CO2    Emission of the vehicle is :{}'.format(output))
-    return 'predict'
+# @app.route('/predict', methods=['POST'])
+# def predict():
+#     #for rendering results on HTML GUI
+#     # int_features = [float(x) for x in request.form.values()]
+#     # final_features = [np.array(int_features)]
+#     # prediction = model.predict(final_features)
+#     # output = round(prediction[0], 2)
+#     # return render_template('index.html', prediction_text='CO2    Emission of the vehicle is :{}'.format(output))
+#     return 'predict'
 
