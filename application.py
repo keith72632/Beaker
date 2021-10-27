@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+# model = pickle.load(open('model.pkl', 'rb'))
 
 #default page of our web-app
 @app.route('/')
@@ -14,10 +14,10 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     #for rendering results on HTML GUI
-    int_features = [float(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
-    output = round(prediction[0], 2)
+    # int_features = [float(x) for x in request.form.values()]
+    # final_features = [np.array(int_features)]
+    # prediction = model.predict(final_features)
+    # output = round(prediction[0], 2)
     # return render_template('index.html', prediction_text='CO2    Emission of the vehicle is :{}'.format(output))
     return 'predict'
 
