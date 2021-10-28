@@ -7,8 +7,12 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 #default page of our web-app
 @application.route('/')
-def home():
-    return render_template('index.html')
+def homey():
+    return render_template('home.html')
+
+@application.route('/jartest')
+def jartest():
+    return render_template('jartest.html')
 
 @application.route('/predict', methods=['POST'])
 def predict():
@@ -19,5 +23,4 @@ def predict():
     prediction = model.predict(final_features)
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='Optimal Coagulant Dosage: {} mg/l'.format(output))
-
+    return render_template('jartest.html', prediction_text='Optimal Coagulant Dosage: {} mg/l'.format(output))
