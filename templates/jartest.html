@@ -18,25 +18,28 @@
  <div class="login">
 	<h1>Virtual Jar Testing</h1>
      <h3> Fill out the following forms to calulate an optimal coagulant dosage</h3>
-    <select name="coagulants" id="coagulants" method="post">
-      <option value="Null">Choose a Coagulant</option>
-      <option value="PAC">Polyaluminum Chloride(PAC)</option>
-      <option value="ACH">Aluminum Chlorohydrate(ACH)</option>
-      <option value="Alum">Aluminum Sulfate(Alum)</option>
-    </select>
+
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-		    <input type="text" name="airtemp" placeholder="Air Temperature" required="required"/>
-    	  <input type="text" name="enginesize" placeholder="Water Temperature" required="required" />
-        <input type="text" name="cylinders" placeholder="Raw Turbidity" required="required" />
-		    <input type="text" name="fuel" placeholder="Settled pH" required="required" />
-		    <input type="text" name="detentiontime" placeholder="Approximated Detention Time" required="required"/>
+        <select name="type" id="coagulants" method="post">
+          <option value="Null">Choose a Coagulant</option>
+          <option value='1'>Polyaluminum Chloride(PAC)</option>
+          <option value="2">Aluminum Chlorohydrate(ACH)</option>
+          <option value="3">Aluminum Sulfate(Alum)</option>
+        </select>
+		    <input type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
+    	  <input type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
+    	  <input type="text" name="RawPh" placeholder="Raw pH" required="required" />
+    	  <input type="text" name="SettledPh" placeholder="Settled pH" required="required" />
+        <input type="text" name="RawTurb" placeholder="Raw Turbidity" required="required" />
+        <input type="text" name="DetentionTimeGPM" placeholder="Approximate Detention Time (gpm)" required="required" />
+		    <input type="text" name="SolidsRemoved" placeholder="Prefered Solid Removal %" required="required"/>
         <button type="submit" class="btn">Calculate</button>
     </form>
    <br>
-   <br>
-   {{ prediction_text }}
-
+   <h2>
+      {{ prediction_text }}
+   </h2>
  </div>
 
 </body>

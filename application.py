@@ -1,9 +1,10 @@
 import numpy as np
-from flask import Flask, render_template, request
+from flask import Flask, app, render_template, request
 import pickle
+import sys
 
 application = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('watermodel.pkl', 'rb'))
 
 #default page of our web-app
 @application.route('/')
@@ -18,9 +19,15 @@ def jartest():
 def predict():
     # for rendering results on HTML GUI
     int_features = [float(x) for x in request.form.values()]
+    for x in int_features:
+        print(x, file=sys.stderr)
     forms = slice(1, 4)
-    final_features = [np.array(int_features[forms])]
+    final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
     output = round(prediction[0], 2)
 
     return render_template('jartest.html', prediction_text='Optimal Coagulant Dosage: {} mg/l'.format(output))
+
+@application.route('/contact')
+def contacts():
+    return render_template('contact.html')

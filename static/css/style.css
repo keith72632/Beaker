@@ -38,11 +38,11 @@ body {
 
 header {
 	position: fixed;
-	top: 50px;
+	top: 20px;
 }
 .login {
 	position: absolute;
-	top: 40%;
+	top: 25%;
 	left: 50%;
 	margin: -150px 0 0 -150px;
 	width:400px;
