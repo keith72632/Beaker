@@ -4,7 +4,7 @@ import pickle
 import sys
 
 application = Flask(__name__)
-model = pickle.load(open('watermodel.pkl', 'rb'))
+model = pickle.load(open('model/watermodel.pkl', 'rb'))
 
 #default page of our web-app
 @application.route('/')
@@ -19,9 +19,10 @@ def jartest():
 def predict():
     # for rendering results on HTML GUI
     int_features = [float(x) for x in request.form.values()]
+    solidsremoved = 0.90
+    int_features.append(solidsremoved)
     for x in int_features:
         print(x, file=sys.stderr)
-    forms = slice(1, 4)
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
     output = round(prediction[0], 2)

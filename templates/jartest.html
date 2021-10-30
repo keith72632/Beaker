@@ -1,46 +1,33 @@
-<!DOCTYPE html>
-<html >
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <title>Virtual Jar Testing</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% block head %}
 
-</head>
-<header>
-  <a href="/">Home</a>
-</header>
-<body>
- <div class="login">
+
+{% endblock %}
+
+{% block body %}
+<div class="login">
 	<h1>Virtual Jar Testing</h1>
      <h3> Fill out the following forms to calulate an optimal coagulant dosage</h3>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-        <select name="type" id="coagulants" method="post">
-          <option value="Null">Choose a Coagulant</option>
+        <select name="type" id="coagulants" method="post" required>
+          <option hidden="" disabled="disabled" selected="selected" value="">Select Coagulant</option>
           <option value='1'>Polyaluminum Chloride(PAC)</option>
-          <option value="2">Aluminum Chlorohydrate(ACH)</option>
-          <option value="3">Aluminum Sulfate(Alum)</option>
         </select>
 		    <input type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
     	  <input type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
     	  <input type="text" name="RawPh" placeholder="Raw pH" required="required" />
     	  <input type="text" name="SettledPh" placeholder="Settled pH" required="required" />
         <input type="text" name="RawTurb" placeholder="Raw Turbidity" required="required" />
-        <input type="text" name="DetentionTimeGPM" placeholder="Approximate Detention Time (gpm)" required="required" />
-		    <input type="text" name="SolidsRemoved" placeholder="Prefered Solid Removal %" required="required"/>
-        <button type="submit" class="btn">Calculate</button>
+        <input type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
+        <input type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
+        <button type="submit" class="btn" id="submitBtn" onmousedown="downFunction()" onmouseup="upFunction()">Calculate</button>
     </form>
    <br>
    <h2>
       {{ prediction_text }}
    </h2>
  </div>
-
-</body>
-</html>
+{% endblock %}
