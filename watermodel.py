@@ -6,9 +6,10 @@ import pickle
 def main():
     df = pd.read_csv("WaterData.csv")
 
+    #how to get row with columns of certain values: f.loc[df['column_name'] == some_value]
     #use required features
     cdf = df[['Type', 'AirTemp', 'WaterTemp', 'RawPh', 'SettledPh', 'RawTurb', 'DetentionTimeGPM', 'SolidsRemoved', 'Dosage']]
-    # print(cdf.describe())
+   
     # #Training data and predictor variable
     # #Use all data for training (train-test-split not used)
     X = cdf.iloc[:, :8].values
@@ -19,8 +20,6 @@ def main():
     regressor = LinearRegression()
 
     regressor.fit(X_train, y_train)
-
-    # print(regressor.intercept_)
 
     y_pred = regressor.predict(X_test)
 
