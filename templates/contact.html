@@ -6,14 +6,17 @@
 {% endblock %}
 
 {% block body %}
-<h1>Contacts</h1>
-<div class="homemenu">
-    <p>
+<h1>Contact Information</h1>
+<div class="contactmenu">
+    <p class="message"> 
         This application uses a some machine learning magic to predict the outcome (dosage) of a jartest. A model like this is only as accurrate as the data used to 
         train it. In layman's terms, this model is contigent on data, both the quantity and the diversity of the data. Acquiring jartesting data with varying water
         qualities, performed by different people with different coagulants, will only make this model more accurate, providing the tests are done properly. To acheive
         this, I'm relying on contributors to provide me with testing results from their own labs. Wether it's a copious amount of historical data, or just the results
-        of a single test performed that day, it will all be appreciated the same. If you would like to download a CSV template to log testing results in, click <a href="/api/file_download" download>here.</a> 
-        Otherwise, you can send me an email with the results in any format you see fit. </p>
+        of a single test performed that day, it will all be appreciated the same. If you would like to download a CSV template to log testing results in, click 
+        <a class="download" href="/api/file_download" download>here.</a> Otherwise, you can send me an email with the results in any format you see fit. </p>
+</div>
+<div class="contacts">
+    <h3 class="myemail">Email: email@email.com</h3>
 </div>
 {% endblock %}
