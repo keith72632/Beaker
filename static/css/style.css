@@ -89,7 +89,7 @@ select {
 	-ms-transition: box-shadow .5s ease;
 	transition: box-shadow .5s ease;
 }
- a {
+ a.big {
 	margin: 10px;
 	padding: 20px;
 	color:#fff;

@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, app, render_template, request
+from flask import Flask, app, render_template, request, send_file
 import pickle
 import sys
 
@@ -32,3 +32,7 @@ def predict():
 @application.route('/contact')
 def contacts():
     return render_template('contact.html')
+
+@application.route('/api/file_download')
+def download():
+    return send_file('files/template.csv')
