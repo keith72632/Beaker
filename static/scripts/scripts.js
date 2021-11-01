@@ -8,3 +8,13 @@ const toggleButton = () => {
     }
     element.innerHTML = "Finished";
 }
+
+const submitForms = () => {
+    document.getElementById('formOne').submitForms;
+    document.getElementById('formTwo').submitForms;
+    document.getElementById('formThree').submitForms;
+    document.getElementById('formFour').submitForms;
+    document.getElementById('formFive').submitForms;
+    document.getElementById('formSix').submitForms;
+    console.log('All forms submitted');
+}

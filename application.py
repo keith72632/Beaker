@@ -29,6 +29,15 @@ def predict():
 
     return render_template('jartest.html', prediction_text='Optimal Coagulant Dosage: {} mg/l'.format(output))
 
+@application.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
+
+@application.route('/contribute', methods=['GET', 'POST'])
+def contribute():
+    return render_template('contribute.html')
+
+
 @application.route('/contact')
 def contacts():
     return render_template('contact.html')
