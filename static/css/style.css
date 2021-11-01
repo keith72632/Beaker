@@ -12,6 +12,20 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.btnclick {
+	background-color:  rgba(255,0,0,0.3); /* Green */
+	border: none;
+	text-align: center;
+	border-radius: 8px;
+	padding: 14px 40px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
 .btn:hover { background-color: #fff; box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); }
 
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
@@ -108,7 +122,8 @@ select {
 
  a.download {
 	 color:aquamarine;
-	 font-size: 18px;
+	 font-size: 22px;
+	 text-align: left;
  }
 
  p.message {
@@ -142,5 +157,10 @@ select {
 
  h3.myemail {
 	 font-size: 24px;
+ }
+
+ h3.sourcecode {
+	 font-size: 24px;
+	 color:aquamarine;
  }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }

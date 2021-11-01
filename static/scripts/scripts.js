@@ -1,9 +1,10 @@
-function downFunction(){
-    console.log('Clicked');
-    document.getElementById('submitBtn').style.cssText = 'font-size: 24px;';
-}
-
-function upFunction(){
-    console.log('Clicked');
-    document.getElementById('submitBtn').style.cssText = 'font-size: 20px;';
+const toggleButton = () => {
+    var element = document.getElementById('submitBtn');
+    element.classList.toggle('btnclick');
+    var coagulants = document.getElementById('coagulants');
+    if(!coagulants.value){
+         element.innerHTML = "Pick Coagulant";
+         element.style.cssText = "background-color: #FC0404;"
+    }
+    element.innerHTML = "Finished";
 }
