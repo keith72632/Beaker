@@ -8,11 +8,11 @@
 {% block body %}
 <div>
     <div class="contributionForm">
-        <form class="jarform" id="formOne">
+        <form name="jarOne" class="jarform" id="formOne" action="{{ url_for('contribute')}}"method="post">
             <h3>Jar #1</h3>
             <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value="">Select Coagulant</option>
-                <option value='1'>Polyaluminum Chloride(PAC)</option>
+                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
+                <option value=1>Polyaluminum Chloride(PAC)</option>
             </select>
             <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
             <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
@@ -22,11 +22,11 @@
             <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
             <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
         </form>
-        <form class="jarform" id="formTwo">
+        <form name="jarTwo" class="jarform" id="formTwo" action="{{ url_for('contribute')}}"method="post">
             <h3>Jar #2</h3>
             <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value="">Select Coagulant</option>
-                <option value='1'>Polyaluminum Chloride(PAC)</option>
+                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
+                <option value=1>Polyaluminum Chloride(PAC)</option>
             </select>
             <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
             <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
@@ -36,11 +36,11 @@
             <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
             <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
         </form>
-        <form class="jarform" id="formThree">
+        <form name="jarThree" class="jarform" id="formThree" action="{{ url_for('contribute')}}"method="post">
             <h3>Jar #3</h3>
             <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value="">Select Coagulant</option>
-                <option value='1'>Polyaluminum Chloride(PAC)</option>
+                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
+                <option value=1>Polyaluminum Chloride(PAC)</option>
             </select>
             <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
             <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
@@ -50,11 +50,11 @@
             <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
             <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
         </form>
-        <form class="jarform" id="formFour">
+        <form name="jarFour" class="jarform" id="formFour" action="{{ url_for('contribute')}}"method="post">
             <h3>Jar #4</h3>
             <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value="">Select Coagulant</option>
-                <option value='1'>Polyaluminum Chloride(PAC)</option>
+                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
+                <option value=1>Polyaluminum Chloride(PAC)</option>
             </select>
             <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
             <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
@@ -64,11 +64,11 @@
             <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
             <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
         </form>
-        <form class="jarform" id="formFive">
+        <form name="jarFive" class="jarform" id="formFive" action="{{ url_for('contribute')}}"method="post">
             <h3>Jar #5</h3>
             <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value="">Select Coagulant</option>
-                <option value='1'>Polyaluminum Chloride(PAC)</option>
+                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
+                <option value=1>Polyaluminum Chloride(PAC)</option>
             </select>
             <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
             <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
@@ -78,11 +78,11 @@
             <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
             <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
         </form>
-        <form class="jarform" id="formSix">
+        <form name="jarSix" class="jarform" id="formSix" action="{{ url_for('contribute')}}"method="post">
             <h3>Jar #6</h3>
             <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value="">Select Coagulant</option>
-                <option value='1'>Polyaluminum Chloride(PAC)</option>
+                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
+                <option value=1>Polyaluminum Chloride(PAC)</option>
             </select>
             <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
             <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />

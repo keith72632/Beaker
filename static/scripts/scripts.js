@@ -10,11 +10,11 @@ const toggleButton = () => {
 }
 
 const submitForms = () => {
-    document.getElementById('formOne').submitForms;
-    document.getElementById('formTwo').submitForms;
-    document.getElementById('formThree').submitForms;
-    document.getElementById('formFour').submitForms;
-    document.getElementById('formFive').submitForms;
-    document.getElementById('formSix').submitForms;
+    document.getElementById('formOne').submit();
+    document.getElementById('formTwo').submit();
+    document.getElementById('formThree').submit();
+    document.getElementById('formFour').submit();
+    document.getElementById('formFive').submit();
+    document.getElementById('formSix').submit();
     console.log('All forms submitted');
 }

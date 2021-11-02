@@ -35,6 +35,9 @@ def login():
 
 @application.route('/contribute', methods=['GET', 'POST'])
 def contribute():
+    values = [float(x) for x in request.form.values()]
+    for value in values:
+        print(value, file=sys.stderr)
     return render_template('contribute.html')
 
 
