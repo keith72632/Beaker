@@ -1,3 +1,4 @@
+import re
 import numpy as np
 from flask import Flask, app, render_template, request, send_file
 import pickle
@@ -35,9 +36,17 @@ def login():
 
 @application.route('/contribute', methods=['GET', 'POST'])
 def contribute():
-    values = [float(x) for x in request.form.values()]
+    finvalues = []
+    values = request.form.values()
     for value in values:
-        print(value, file=sys.stderr)
+        if type(value) == str:
+            value == 0
+            finvalues.append(value)
+        else:
+            finvalues.append(value)
+    for value in finvalues:
+        if value:
+            print(value, file=sys.stderr)
     return render_template('contribute.html')
 
 
