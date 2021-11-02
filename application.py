@@ -45,3 +45,6 @@ def contacts():
 @application.route('/api/file_download')
 def download():
     return send_file('files/template.csv')
+
+if __name__ == "__main__":
+    application.debug(True)
