@@ -5,100 +5,12 @@
 
 {% endblock %}
 
+{% block header %}
+<a class="big" href="/">Home</a>
+{% endblock %}
+
 {% block body %}
 <div>
-    <!-- <div class="contributionForm">
-        <form name="jarOne" class="jarform" id="formOne" action="{{ url_for('contribute')}}"method="post">
-            <h3>Jar #1</h3>
-            <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
-                <option value=1>Polyaluminum Chloride(PAC)</option>
-            </select>
-            <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
-            <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
-            <input class="inputform" type="text" name="RawPh" placeholder="Raw pH" required="required" />
-            <input class="inputform" type="text" name="SettledPh" placeholder="Settled pH" required="required" />
-            <input class="inputform" type="text" name="RawTurb" placeholder="Raw Turbidity" required="required" />
-            <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
-            <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
-            <button type="submit" class="btn" value="Submit">Submit</button>
-        </form>
-        <form name="jarTwo" class="jarform" id="formTwo" action="{{ url_for('contribute')}}"method="post">
-            <h3>Jar #2</h3>
-            <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
-                <option value=1>Polyaluminum Chloride(PAC)</option>
-            </select>
-            <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
-            <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
-            <input class="inputform" type="text" name="RawPh" placeholder="Raw pH" required="required" />
-            <input class="inputform" type="text" name="SettledPh" placeholder="Settled pH" required="required" />
-            <input class="inputform" type="text" name="RawTurb" placeholder="Raw Turbidity" required="required" />
-            <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
-            <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
-            <button type="submit" class="btn" value="Submit">Submit</button>
-        </form>
-        <form name="jarThree" class="jarform" id="formThree" action="{{ url_for('contribute')}}"method="post">
-            <h3>Jar #3</h3>
-            <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
-                <option value=1>Polyaluminum Chloride(PAC)</option>
-            </select>
-            <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
-            <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
-            <input class="inputform" type="text" name="RawPh" placeholder="Raw pH" required="required" />
-            <input class="inputform" type="text" name="SettledPh" placeholder="Settled pH" required="required" />
-            <input class="inputform" type="text" name="RawTurb" placeholder="Raw Turbidity" required="required" />
-            <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
-            <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
-            <button type="submit" class="btn" value="Submit">Submit</button>
-        </form>
-        <form name="jarFour" class="jarform" id="formFour" action="{{ url_for('contribute')}}"method="post">
-            <h3>Jar #4</h3>
-            <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
-                <option value=1>Polyaluminum Chloride(PAC)</option>
-            </select>
-            <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
-            <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
-            <input class="inputform" type="text" name="RawPh" placeholder="Raw pH" required="required" />
-            <input class="inputform" type="text" name="SettledPh" placeholder="Settled pH" required="required" />
-            <input class="inputform" type="text" name="RawTurb" placeholder="Raw Turbidity" required="required" />
-            <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
-            <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
-            <button type="submit" class="btn" value="Submit">Submit</button>
-        </form>
-        <form name="jarFive" class="jarform" id="formFive" action="{{ url_for('contribute')}}"method="post">
-            <h3>Jar #5</h3>
-            <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
-                <option value=1>Polyaluminum Chloride(PAC)</option>
-            </select>
-            <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
-            <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
-            <input class="inputform" type="text" name="RawPh" placeholder="Raw pH" required="required" />
-            <input class="inputform" type="text" name="SettledPh" placeholder="Settled pH" required="required" />
-            <input class="inputform" type="text" name="RawTurb" placeholder="Raw Turbidity" required="required" />
-            <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
-            <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
-            <button type="submit" class="btn" value="Submit">Submit</button>
-        </form>
-        <form name="jarSix" class="jarform" id="formSix" action="{{ url_for('contribute')}}"method="post">
-            <h3>Jar #6</h3>
-            <select name="type" id="coagulants" method="post" required>
-                <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
-                <option value=1>Polyaluminum Chloride(PAC)</option>
-            </select>
-            <input class="inputform" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
-            <input class="inputform" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
-            <input class="inputform" type="text" name="RawPh" placeholder="Raw pH" required="required" />
-            <input class="inputform" type="text" name="SettledPh" placeholder="Settled pH" required="required" />
-            <input class="inputform" type="text" name="RawTurb" placeholder="Raw Turbidity" required="required" />
-            <input class="inputform" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
-            <input class="inputform" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
-            <button type="submit" class="btn" value="Submit">Submit</button>
-        </form>
-    </div> -->
     <div class="contributionForm">
         <form style="display: flex;" name="jarOne" class="jarform" id="formOne" action="{{ url_for('contribute')}}"method="post">
             <div>

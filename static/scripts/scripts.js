@@ -18,3 +18,7 @@ const submitForms = () => {
     document.getElementById('formSix').submit();
     console.log('All forms submitted');
 }
+
+const getBig = (e) => {
+    e.style.cssText = 'font-size: 22px;';
+}

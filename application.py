@@ -30,9 +30,15 @@ def predict():
 
     return render_template('jartest.html', prediction_text='Optimal Coagulant Dosage: {} mg/l'.format(output))
 
-@application.route('/login', methods=['GET', 'POST'])
+@application.route('/login')
 def login():
     return render_template('login.html')
+
+@application.route('/login', methods=['POST'])
+def login_from():
+    if request.method == "POST":
+        text = request.form['name']
+        passwd = request.form['passwd']
 
 @application.route('/contribute', methods=['GET', 'POST'])
 def contribute():

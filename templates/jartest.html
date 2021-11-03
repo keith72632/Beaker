@@ -5,11 +5,13 @@
 
 {% endblock %}
 
+{% block header %}
+  <a class="big" href="/">Home</a>
+{% endblock %}
+
 {% block body %}
 <div class="login">
-	<h1>Jar Testing</h1>
-     <h3> Fill out the following forms to calulate an optimal coagulant dosage</h3>
-
+	<h1>Beaker</h1>
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
         <select name="type" id="coagulants" method="post" class="model" required>
@@ -26,8 +28,8 @@
         <button type="submit" class="btn" id="submitBtn" onmousedown="toggleButton()">Calculate</button>
     </form>
    <br>
-   <h2>
+   <h3>
       {{ prediction_text }}
-   </h2>
+   </h3>
  </div>
 {% endblock %}
