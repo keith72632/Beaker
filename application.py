@@ -71,5 +71,5 @@ def download():
 def data():
     return render_template('data.html')
 
-if __name__ == "__main__":
-    application.run(debug=True)
+# if __name__ == "__main__":
+#     application.run(debug=True)
