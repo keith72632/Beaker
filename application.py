@@ -11,8 +11,8 @@ model = pickle.load(open('model/watermodel.pkl', 'rb'))
 #default page of our web-app
 @application.route('/')
 def homey():
-    # df = pd.read_csv('model/WaterData.csv')
-    # print(df.describe())
+    df = pd.read_csv('model/WaterData.csv')
+    print(df.describe())
     return render_template('home.html')
 
 @application.route('/jartest')
