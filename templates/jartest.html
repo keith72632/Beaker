@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block header %}
-  <a class="big" href="/">Home</a>
+<a class="big" href="/">Home</a>
 {% endblock %}
 
 {% block body %}
@@ -18,13 +18,19 @@
           <option hidden="" disabled="disabled" selected="selected" value="">Select Coagulant</option>
           <option value='1'>Polyaluminum Chloride(PAC)</option>
         </select>
-		    <input class="model" type="text" name="AirTemp" placeholder="Air Temperature" required="required"/>
-    	  <input class="model" type="text" name="WaterTemp" placeholder="Water Temperature" required="required" />
-    	  <input class="model" type="text" name="RawPh" placeholder="Raw pH" required="required" />
-    	  <input class="model" type="text" name="SettledPh" placeholder="Settled pH" required="required" />
-        <input class="model" type="text" name="RawTurb" placeholder="Raw Turbidity" required="required" />
-        <input class="model" type="text" name="MixerSpeed" placeholder="Mixer Speed" required="required" />
-        <input class="model" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" />
+        <select name="shape" id="shape" method="post" class="model" required>
+          <option hidden="" disabled="disabled" selected="selected" value="">Jar Shape</option>
+          <option value='1'>Round 1000mL</option>
+          <option value='2'>Square 1000mL</option>
+        </select>
+		    <input class="model" type="text" name="AirTemp" placeholder="Air Temperature (fahrenheit)" required="required" autocomplete="off"/>
+    	  <input class="model" type="text" name="WaterTemp" placeholder="Water Temperature (fahrenheit)" required="required" autocomplete="off" />
+    	  <input class="model" type="text" name="RawPh" placeholder="Raw pH" required="required" autocomplete="off" />
+    	  <input class="model" type="text" name="SettledPh" placeholder="Settled pH" required="required" autocomplete="off" />
+        <input class="model" type="text" name="RawTurb" placeholder="Raw Turbidity (ntu)" required="required" autocomplete="off" />
+        <input class="model" type="text" name="MixerSpeed" placeholder="Mixer Speed (rpm)" required="required" autocomplete="off" />
+        <input class="model" type="text" name="MixTime" placeholder="Mix Time (min)" required="required" autocomplete="off" />
+        <input class="model" type="text" name="SettleTime" placeholder="Settle Time (min)" required="required" autocomplete="off" />
         <button type="submit" class="btn" id="submitBtn" onmousedown="toggleButton()">Calculate</button>
     </form>
    <br>

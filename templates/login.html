@@ -14,9 +14,9 @@
     <h1>Login</h1>
     <form action="{{ url_for('contribute')}}" method="post">
         <label for="name">Username</label><br>
-        <input class="inputform" type="text" id="name" name="name"/><br>
+        <input class="inputform" type="text" id="name" name="name" autocomplete="off"><br>
         <label for="passwd">Password</label><br>
-        <input class="inputform" type="text" id="passwd" name="passwd" /><br>
+        <input class="inputform" type="text" id="passwd" name="passwd" autocomplete="off"/><br>
         <button class="btn" type="submit">Login</button>
     </form>
 </div>

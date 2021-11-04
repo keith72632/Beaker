@@ -1,5 +1,6 @@
 import re
 import numpy as np
+import pandas as pd
 from flask import Flask, app, render_template, request, send_file
 import pickle
 import sys
@@ -10,6 +11,8 @@ model = pickle.load(open('model/watermodel.pkl', 'rb'))
 #default page of our web-app
 @application.route('/')
 def homey():
+    df = pd.read_csv('model/WaterData.csv')
+    print(df.describe())
     return render_template('home.html')
 
 @application.route('/jartest')
@@ -64,5 +67,9 @@ def contacts():
 def download():
     return send_file('files/template.csv')
 
+@application.route('/data')
+def data():
+    return render_template('data.html')
+
 if __name__ == "__main__":
-    application.debug(True)
+    application.run(debug=True)

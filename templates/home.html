@@ -7,8 +7,9 @@
 
 {% block body %}
 <div class="homemenu">
-    <a class="big" href="jartest" onmouseover="getBig(this)">Beaker</a>
-    <a class="big" href="contact" onmouseover="getBig(this)">Contact Us</a>
-    <a class="big" href="login" onmouseover="getBig(this)">Contribute</a>
+    <a class="big" href="jartest" onmouseenter="getBig(this)" onmouseleave="getSmall(this)">Beaker</a>
+    <a class="big" href="login" onmouseenter="getBig(this)" onmouseleave="getSmall(this)">Contribute</a>
+    <a class="big" href="data" onmouseenter="getBig(this)" onmouseleave="getSmall(this)">Data</a>
+    <a class="big" href="contact" onmouseenter="getBig(this)" onmouseleave="getSmall(this)">Contact Us</a>
 </div>
 {% endblock %}
