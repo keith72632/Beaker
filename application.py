@@ -1,7 +1,7 @@
 import re
 import numpy as np
 import pandas as pd
-from flask import Flask, app, render_template, request, send_file
+from flask import Flask, render_template, request, send_file
 import pickle
 import sys
 
