@@ -1,23 +1,28 @@
-import re
 import numpy as np
 import pandas as pd
-from flask import Flask, render_template, request, send_file
+from flask import Flask, app, render_template, request, send_file, redirect
+from pymysql import connections
+from flask_mysqldb import MySQL
+from flask.helpers import url_for
 import pickle
 import sys
 import pymysql
 import traceback
+import os
 
-host = "beaker.cmgczbvm6udl.us-east-2.rds.amazonaws.com"
-user = 'admin'
-passwd = 'thinmint'
-datab = 'beakerusers'
 
 application = Flask(__name__)
 model = pickle.load(open('model/watermodel.pkl', 'rb'))
 
+HOST = os.environ.get('HOST')
+USER = os.environ.get('USER')
+PASSWD = os.environ.get('PASSWD')
+DB = os.environ.get('DB')
+
 #default page of our web-app
 @application.route('/')
 def homey():
+    print(os.environ.get('USER'))
     df = pd.read_csv('model/WaterData.csv')
     print(df.describe())
     return render_template('home.html')
@@ -40,34 +45,47 @@ def predict():
 
     return render_template('jartest.html', prediction_text='Optimal Coagulant Dosage: {} mg/l'.format(output))
 
-@application.route('/login')
+@application.route('/login', methods=['GET', 'POST'])
 def login():
-    try:
-        connection = pymysql.connect(host="beaker.cmgczbvm6udl.us-east-2.rds.amazonaws.com", user='admin', password='thinmint', database='beakerusers')
-        print('connection to database made')
-    except:
-        traceback.print_exc()
-    return render_template('login.html')
-
-@application.route('/login', methods=['POST'])
-def login_from():
+ 
+    error = None
     if request.method == "POST":
+        application.config['MYSQL_HOST'] = "beaker.cmgczbvm6udl.us-east-2.rds.amazonaws.com"
+        application.config['MYSQL_USER'] = 'admin'
+        application.config['MYSQL_PASSWORD'] = 'thinmint'
+        application.config['MYSQL_DB'] = 'beakerusers'
+
+        mysql = MySQL(application)
+
         text = request.form['name']
         passwd = request.form['passwd']
+        if text != 'keith' or passwd != 'thinmint':
+            error = 'Invalid credentials'
+        else:
+            try:
+                cur = mysql.connection.cursor()
+                print('Connection to db made')
+                # cur.execute("INSERT INTO MyUsers(firstName, lastName) VALUES (%s, %s)", (firstName, lastName))
+                mysql.connection.commit()
+                cur.close()
+            except:
+                traceback.print_exc()
+            return redirect(url_for('contribute'))
+    
+    return render_template('login.html', error=error)
+
+
 
 @application.route('/contribute', methods=['GET', 'POST'])
 def contribute():
-    finvalues = []
-    values = request.form.values()
-    for value in values:
-        if type(value) == str:
-            value == 0
-            finvalues.append(value)
-        else:
-            finvalues.append(value)
-    for value in finvalues:
-        if value:
-            print(value, file=sys.stderr)
+    if request.method == "POST":
+        jarOne = request.form.getlist('jarOne[]')
+        jarTwo = request.form.getlist('jarTwo[]')
+        jarThree = request.form.getlist('jarThree[]')
+        jarFour = request.form.getlist('jarFour[]')
+        jarFive = request.form.getlist('jarFive[]')
+        jarSix = request.form.getlist('jarSix[]')
+
     return render_template('contribute.html')
 
 

@@ -15,86 +15,117 @@
         <form style="display: flex;" name="jarOne" class="jarform" id="formOne" action="{{ url_for('contribute')}}"method="post">
             <div>
                 <h3>Jar #1</h3>
-                <select name="type1" id="coagulants1" method="post">
+                <select name="jarOne[]" id="coagulants1" method="post">
                     <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
                     <option value=1>Polyaluminum Chloride(PAC)</option>
                 </select>
-                <input autocomplete="off" class="inputform" type="text" name="AirTemp1" placeholder="Air Temperature"/>
-                <input autocomplete="off" class="inputform" type="text" name="WaterTemp1" placeholder="Water Temperature" />
-                <input autocomplete="off" class="inputform" type="text" name="RawPh1" placeholder="Raw pH" />
-                <input autocomplete="off" class="inputform" type="text" name="SettledPh1" placeholder="Settled pH" />
-                <input autocomplete="off" class="inputform" type="text" name="RawTurb1" placeholder="Raw Turbidity" />
-                <input autocomplete="off" class="inputform" type="text" name="MixerSpeed1" placeholder="Mixer Speed" />
-                <input autocomplete="off" class="inputform" type="text" name="SettleTime1" placeholder="Settle Time (min)" />          
+                <select name="jarOne[]" id="shape" method="post" class="model">
+                    <option hidden="" disabled="disabled" selected="selected" value="">Jar Shape</option>
+                    <option value='1'>Round 1000mL</option>
+                    <option value='2'>Square 1000mL</option>
+                </select>
+                <input autocomplete="off" class="inputform" type="text" name="jarOne[]" placeholder="Air Temperature"/>
+                <input autocomplete="off" class="inputform" type="text" name="jarOne[]" placeholder="Water Temperature" />
+                <input autocomplete="off" class="inputform" type="text" name="jarOne[]" placeholder="Raw pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarOne[]" placeholder="Settled pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarOne[]" placeholder="Raw Turbidity" />
+                <input autocomplete="off" class="inputform" type="text" name="jarOne[]" placeholder="Mixer Speed" />
+                <input autocomplete="off" class="inputform" type="text" name="jarOne[]" placeholder="Settle Time (min)" />          
             </div>
             <div>
                 <h3>Jar #2</h3>
-                <select name="type2" id="coagulants2" method="post">
+                <select name="jarTwo[]" id="coagulants2" method="post">
                     <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
                     <option value=1>Polyaluminum Chloride(PAC)</option>
                 </select>
-                <input autocomplete="off" class="inputform" type="text" name="AirTemp2" placeholder="Air Temperature"/>
-                <input autocomplete="off" class="inputform" type="text" name="WaterTemp2" placeholder="Water Temperature" />
-                <input autocomplete="off" class="inputform" type="text" name="RawPh2" placeholder="Raw pH" />
-                <input autocomplete="off" class="inputform" type="text" name="SettledPh2" placeholder="Settled pH" />
-                <input autocomplete="off" class="inputform" type="text" name="RawTurb2" placeholder="Raw Turbidity" />
-                <input autocomplete="off" class="inputform" type="text" name="MixerSpeed2" placeholder="Mixer Speed" />
-                <input autocomplete="off" class="inputform" type="text" name="SettleTime2" placeholder="Settle Time (min)" />
+                <select name="jarTwo[]" id="shape" method="post" class="model">
+                    <option hidden="" disabled="disabled" selected="selected" value="">Jar Shape</option>
+                    <option value='1'>Round 1000mL</option>
+                    <option value='2'>Square 1000mL</option>
+                </select>
+                <input autocomplete="off" class="inputform" type="text" name="jarTwo[]" placeholder="Air Temperature"/>
+                <input autocomplete="off" class="inputform" type="text" name="jarTwo[]" placeholder="Water Temperature" />
+                <input autocomplete="off" class="inputform" type="text" name="jarTwo[]" placeholder="Raw pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarTwo[]" placeholder="Settled pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarTwo[]" placeholder="Raw Turbidity" />
+                <input autocomplete="off" class="inputform" type="text" name="jarTwo[]" placeholder="Mixer Speed" />
+                <input autocomplete="off" class="inputform" type="text" name="jarTwo[]" placeholder="Settle Time (min)" />
             </div>
             <div>
                 <h3>Jar #3</h3>
-                <select name="type3" id="coagulants3" method="post">
+                <select name="jarThree[]" id="coagulants3" method="post">
                     <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
                     <option value=1>Polyaluminum Chloride(PAC)</option>
                 </select>
-                <input autocomplete="off" class="inputform" type="text" name="AirTemp3" placeholder="Air Temperature"/>
-                <input autocomplete="off" class="inputform" type="text" name="WaterTemp3" placeholder="Water Temperature" />
-                <input autocomplete="off" class="inputform" type="text" name="RawPh3" placeholder="Raw pH" />
-                <input autocomplete="off" class="inputform" type="text" name="SettledPh3" placeholder="Settled pH" />
-                <input autocomplete="off" class="inputform" type="text" name="RawTurb3" placeholder="Raw Turbidity" />
-                <input autocomplete="off" class="inputform" type="text" name="MixerSpeed3" placeholder="Mixer Speed" />
-                <input autocomplete="off" class="inputform" type="text" name="SettleTime3" placeholder="Settle Time (min)" />
+                <select name="jarThree[]" id="shape" method="post" class="model">
+                    <option hidden="" disabled="disabled" selected="selected" value="">Jar Shape</option>
+                    <option value='1'>Round 1000mL</option>
+                    <option value='2'>Square 1000mL</option>
+                </select>
+                <input autocomplete="off" class="inputform" type="text" name="jarThree[]" placeholder="Air Temperature"/>
+                <input autocomplete="off" class="inputform" type="text" name="jarThree[]" placeholder="Water Temperature" />
+                <input autocomplete="off" class="inputform" type="text" name="jarThree[]" placeholder="Raw pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarThree[]" placeholder="Settled pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarThree[]" placeholder="Raw Turbidity" />
+                <input autocomplete="off" class="inputform" type="text" name="jarThree[]" placeholder="Mixer Speed" />
+                <input autocomplete="off" class="inputform" type="text" name="jarThree[]" placeholder="Settle Time (min)" />
             </div>
             <div>
                 <h3>Jar #4</h3>
-                <select name="type4" id="coagulants4" method="post">
+                <select name="jarFour[]" id="coagulants4" method="post">
                     <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
                     <option value=1>Polyaluminum Chloride(PAC)</option>
                 </select>
-                <input autocomplete="off" class="inputform" type="text" name="AirTemp4" placeholder="Air Temperature"/>
-                <input autocomplete="off" class="inputform" type="text" name="WaterTemp4" placeholder="Water Temperature" />
-                <input autocomplete="off" class="inputform" type="text" name="RawPh4" placeholder="Raw pH" />
-                <input autocomplete="off" class="inputform" type="text" name="SettledPh4" placeholder="Settled pH" />
-                <input autocomplete="off" class="inputform" type="text" name="RawTurb4" placeholder="Raw Turbidity" />
-                <input autocomplete="off" class="inputform" type="text" name="MixerSpeed4" placeholder="Mixer Speed" />
-                <input autocomplete="off" class="inputform" type="text" name="SettleTime4" placeholder="Settle Time (min)" />
+                <select name="jarFour[]" id="shape" method="post" class="model">
+                    <option hidden="" disabled="disabled" selected="selected" value="">Jar Shape</option>
+                    <option value='1'>Round 1000mL</option>
+                    <option value='2'>Square 1000mL</option>
+                </select>
+                <input autocomplete="off" class="inputform" type="text" name="jarFour[]" placeholder="Air Temperature"/>
+                <input autocomplete="off" class="inputform" type="text" name="jarFour[]" placeholder="Water Temperature" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFour[]" placeholder="Raw pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFour[]" placeholder="Settled pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFour[]" placeholder="Raw Turbidity" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFour[]" placeholder="Mixer Speed" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFour[]" placeholder="Settle Time (min)" />
             </div>
             <div>
                 <h3>Jar #5</h3>
-                <select name="type5" id="coagulants5" method="post">
-                    <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
-                    <option value=1>Polyaluminum Chloride(PAC)</option>
-                <input autocomplete="off" class="inputform" type="text" name="AirTemp5" placeholder="Air Temperature"/>
-                <input autocomplete="off" class="inputform" type="text" name="WaterTemp5" placeholder="Water Temperature" />
-                <input autocomplete="off" class="inputform" type="text" name="RawPh5" placeholder="Raw pH" />
-                <input autocomplete="off" class="inputform" type="text" name="SettledPh5" placeholder="Settled pH" />
-                <input autocomplete="off" class="inputform" type="text" name="RawTurb5" placeholder="Raw Turbidity" />
-                <input autocomplete="off" class="inputform" type="text" name="MixerSpeed5" placeholder="Mixer Speed" />
-                <input autocomplete="off" class="inputform" type="text" name="SettleTime5" placeholder="Settle Time (min)" />
-            </div>
-            <div>
-                <h3>Jar #6</h3>
-                <select name="type6" id="coagulants6" method="post">
+                <select name="jarFive[]" id="coagulants5" method="post">
                     <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
                     <option value=1>Polyaluminum Chloride(PAC)</option>
                 </select>
-                <input autocomplete="off" class="inputform" type="text" name="AirTemp6" placeholder="Air Temperature"/>
-                <input autocomplete="off" class="inputform" type="text" name="WaterTemp6" placeholder="Water Temperature" />
-                <input autocomplete="off" class="inputform" type="text" name="RawPh6" placeholder="Raw pH" />
-                <input autocomplete="off" class="inputform" type="text" name="SettledPh6" placeholder="Settled pH" />
-                <input autocomplete="off" class="inputform" type="text" name="RawTurb6" placeholder="Raw Turbidity" />
-                <input autocomplete="off" class="inputform" type="text" name="MixerSpeed6" placeholder="Mixer Speed" />
-                <input autocomplete="off" class="inputform" type="text" name="SettleTime6" placeholder="Settle Time (min)" />
+                <select name="jarFive[]" id="shape" method="post" class="model">
+                    <option hidden="" disabled="disabled" selected="selected" value="">Jar Shape</option>
+                    <option value='1'>Round 1000mL</option>
+                    <option value='2'>Square 1000mL</option>
+                </select>
+                <input autocomplete="off" class="inputform" type="text" name="jarFive[]" placeholder="Air Temperature"/>
+                <input autocomplete="off" class="inputform" type="text" name="jarFive[]" placeholder="Water Temperature" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFive[]" placeholder="Raw pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFive[]" placeholder="Settled pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFive[]" placeholder="Raw Turbidity" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFive[]" placeholder="Mixer Speed" />
+                <input autocomplete="off" class="inputform" type="text" name="jarFive[]" placeholder="Settle Time (min)" />
+            </div>
+            <div>
+                <h3>Jar #6</h3>
+                <select name="jarSix[]" id="coagulants6" method="post">
+                    <option hidden="" disabled="disabled" selected="selected" value=0>Select Coagulant</option>
+                    <option value=1>Polyaluminum Chloride(PAC)</option>
+                </select>
+                <select name="jarSix[]" id="shape" method="post" class="model">
+                    <option hidden="" disabled="disabled" selected="selected" value="">Jar Shape</option>
+                    <option value='1'>Round 1000mL</option>
+                    <option value='2'>Square 1000mL</option>
+                </select>
+                <input autocomplete="off" class="inputform" type="text" name="jarSix[]" placeholder="Air Temperature"/>
+                <input autocomplete="off" class="inputform" type="text" name="jarSix[]" placeholder="Water Temperature" />
+                <input autocomplete="off" class="inputform" type="text" name="jarSix[]" placeholder="Raw pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarSix[]" placeholder="Settled pH" />
+                <input autocomplete="off" class="inputform" type="text" name="jarSix[]" placeholder="Raw Turbidity" />
+                <input autocomplete="off" class="inputform" type="text" name="jarSix[]" placeholder="Mixer Speed" />
+                <input autocomplete="off" class="inputform" type="text" name="jarSix[]" placeholder="Settle Time (min)" />
                 <button type="submit" class="btn" value="Submit">Submit</button>
             </div>
         </form>
