@@ -41,8 +41,6 @@ def predict():
     int_features = [float(x) for x in request.form.values()]
     solidsremoved = 0.90
     int_features.append(solidsremoved)
-    for x in int_features:
-        print(x, file=sys.stderr)
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
     output = round(prediction[0], 2)
