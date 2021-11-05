@@ -6,14 +6,18 @@ from flask_mysqldb import MySQL
 from flask.helpers import url_for
 import pickle
 import sys
-import pymysql
 import traceback
-import os
 
 
 application = Flask(__name__)
 model = pickle.load(open('model/watermodel.pkl', 'rb'))
 
+application.config['MYSQL_HOST'] = "beaker.cmgczbvm6udl.us-east-2.rds.amazonaws.com"
+application.config['MYSQL_USER'] = 'admin'
+application.config['MYSQL_PASSWORD'] = 'thinmint'
+application.config['MYSQL_DB'] = 'beakerusers'
+
+mysql = MySQL(application)
 # # HOST = os.environ.get('HOST')
 # USER = os.environ.get('USER')
 # PASSWD = os.environ.get('PASSWD')
@@ -50,13 +54,6 @@ def login():
  
     error = None
     if request.method == "POST":
-        application.config['MYSQL_HOST'] = "beaker.cmgczbvm6udl.us-east-2.rds.amazonaws.com"
-        application.config['MYSQL_USER'] = 'admin'
-        application.config['MYSQL_PASSWORD'] = 'thinmint'
-        application.config['MYSQL_DB'] = 'beakerusers'
-
-        mysql = MySQL(application)
-
         text = request.form['name']
         passwd = request.form['passwd']
         if text != 'keith' or passwd != 'thinmint':
