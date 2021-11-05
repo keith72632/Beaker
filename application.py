@@ -5,8 +5,11 @@ from flask import Flask, app, render_template, request, send_file, redirect
 from flask.helpers import url_for
 import pickle
 import sys
+<<<<<<< HEAD
 import traceback
 
+=======
+>>>>>>> parent of e8bc543 (added run debug)
 
 application = Flask(__name__)
 model = pickle.load(open('model/watermodel.pkl', 'rb'))
@@ -48,8 +51,15 @@ def predict():
 
 @application.route('/login', methods=['GET', 'POST'])
 def login():
+<<<<<<< HEAD
  
     error = None
+=======
+    return render_template('login.html')
+
+@application.route('/login', methods=['POST'])
+def login_from():
+>>>>>>> parent of e8bc543 (added run debug)
     if request.method == "POST":
         text = request.form['name']
         passwd = request.form['passwd']
@@ -95,5 +105,5 @@ def download():
 def data():
     return render_template('data.html')
 
-if __name__ == "__main__":
-    application.run(debug=True)
+# if __name__ == "__main__":
+#     application.run(debug=True)
