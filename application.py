@@ -1,8 +1,7 @@
 import numpy as np
 import pandas as pd
 from flask import Flask, app, render_template, request, send_file, redirect
-from pymysql import connections
-from flask_mysqldb import MySQL
+# from flask_mysqldb import MySQL
 from flask.helpers import url_for
 import pickle
 import sys
