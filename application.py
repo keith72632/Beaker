@@ -14,15 +14,15 @@ import os
 application = Flask(__name__)
 model = pickle.load(open('model/watermodel.pkl', 'rb'))
 
-HOST = os.environ.get('HOST')
-USER = os.environ.get('USER')
-PASSWD = os.environ.get('PASSWD')
-DB = os.environ.get('DB')
+# # HOST = os.environ.get('HOST')
+# USER = os.environ.get('USER')
+# PASSWD = os.environ.get('PASSWD')
+# DB = os.environ.get('DB')
 
 #default page of our web-app
 @application.route('/')
 def homey():
-    print(os.environ.get('USER'))
+    # print(os.environ.get('USER'))
     df = pd.read_csv('model/WaterData.csv')
     print(df.describe())
     return render_template('home.html')
