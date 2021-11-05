@@ -16,7 +16,7 @@ application.config['MYSQL_USER'] = 'admin'
 application.config['MYSQL_PASSWORD'] = 'thinmint'
 application.config['MYSQL_DB'] = 'beakerusers'
 
-mysql = MySQL(application)
+# mysql = MySQL(application)
 # # HOST = os.environ.get('HOST')
 # USER = os.environ.get('USER')
 # PASSWD = os.environ.get('PASSWD')
@@ -56,14 +56,14 @@ def login():
         if text != 'keith' or passwd != 'thinmint':
             error = 'Invalid credentials'
         else:
-            try:
-                cur = mysql.connection.cursor()
-                print('Connection to db made')
-                # cur.execute("INSERT INTO MyUsers(firstName, lastName) VALUES (%s, %s)", (firstName, lastName))
-                mysql.connection.commit()
-                cur.close()
-            except:
-                traceback.print_exc()
+            # try:
+            #     cur = mysql.connection.cursor()
+            #     print('Connection to db made')
+            #     # cur.execute("INSERT INTO MyUsers(firstName, lastName) VALUES (%s, %s)", (firstName, lastName))
+            #     mysql.connection.commit()
+            #     cur.close()
+            # except:
+            #     traceback.print_exc()
             return redirect(url_for('contribute'))
     
     return render_template('login.html', error=error)
