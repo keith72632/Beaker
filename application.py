@@ -4,6 +4,13 @@ import pandas as pd
 from flask import Flask, render_template, request, send_file
 import pickle
 import sys
+import pymysql
+import traceback
+
+host = "beaker.cmgczbvm6udl.us-east-2.rds.amazonaws.com"
+user = 'admin'
+passwd = 'thinmint'
+datab = 'beakerusers'
 
 application = Flask(__name__)
 model = pickle.load(open('model/watermodel.pkl', 'rb'))
@@ -35,6 +42,11 @@ def predict():
 
 @application.route('/login')
 def login():
+    try:
+        connection = pymysql.connect(host="beaker.cmgczbvm6udl.us-east-2.rds.amazonaws.com", user='admin', password='thinmint', database='beakerusers')
+        print('connection to database made')
+    except:
+        traceback.print_exc()
     return render_template('login.html')
 
 @application.route('/login', methods=['POST'])
@@ -71,5 +83,5 @@ def download():
 def data():
     return render_template('data.html')
 
-# if __name__ == "__main__":
-#     application.run(debug=True)
+if __name__ == "__main__":
+    application.run(debug=True)
